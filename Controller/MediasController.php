@@ -22,6 +22,8 @@ class MediasController extends AppController{
         if(in_array('Security', $this->components)){
             $this->Security->unlockedActions = array('upload', 'order','index','delete','thumb');
         }
+        $this->Security->csrfCheck = false;
+        $this->Security->validatePost = false;
     }
 
     /**
